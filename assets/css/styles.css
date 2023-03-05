@@ -1,0 +1,279 @@
+:root {
+  --bg: #ffffff;
+  --color-f: #000000;
+  --tittle-banner: #ffffff;
+  --z-banner-container: 1000;
+  --z-menu: 2000;
+  --h-menu: 70px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+/*------------------- NAVBAR ---------------------*/
+.navbar {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--h-menu);
+  padding: 0 1rem;
+  position: fixed;
+  z-index: var(--z-menu);
+  width: 100%;
+}
+
+.navbar_logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar_logo img {
+  width: 50px;
+}
+
+.navbar_logo p {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.navbar_logo span {
+  font-weight: 100;
+}
+
+.menu {
+  position: fixed;
+  background-color: #ffffff;
+  top: var(--h-menu);
+  left: 100%;
+  width: 100%;
+  height: calc(100% - var(--h-menu));
+  z-index: var(--z-menu);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  gap: 1rem;
+  transition: left 0.5s;
+}
+
+.menu_show {
+  left: 0;
+}
+
+.navbar .bx-menu {
+  font-size: 2rem;
+  color: #000000;
+  cursor: pointer;
+}
+
+/*------------------- BANNER ---------------------*/
+
+.banner {
+  height: 600px;
+  background-image: url("https://images2.alphacoders.com/119/thumb-1920-1191759.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: var(--tittle-banner);
+  user-select: none;
+
+  position: relative;
+}
+
+.banner_container {
+  position: relative;
+  z-index: var(--z-banner-container);
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.banner_container h1 {
+  line-height: 2.5rem;
+}
+
+.banner_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-color: #00000050;
+}
+
+/*------------------- CARDS---------------------*/
+
+.content_cards {
+  padding: 5rem 1rem;
+}
+
+.content_cards h2 {
+  font-size: 2rem;
+
+  padding: 2rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card_header {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.card_body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card_body a {
+  background-color: paleturquoise;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*------------------- PARALLAX---------------------*/
+
+.parallax {
+  height: 100vh;
+  background-image: url("https://source.unsplash.com/random/1920×1080/?pets");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+}
+
+.img--bottom {
+  position: absolute;
+  bottom: 0;
+  color: #ffffff;
+}
+
+.adoption {
+  text-align: center;
+  padding: 3 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem;
+}
+
+footer h2 span {
+  font-weight: 100;
+}
+
+.footer_nav {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (min-width: 700px) {
+  .card {
+    flex-direction: row;
+  }
+
+  .card:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .card_header {
+    width: 50%;
+    height: 400px;
+  }
+  .card_header img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card_body {
+    width: 50%;
+    justify-content: center;
+  }
+
+  .card_body a {
+    width: 150px;
+  }
+
+  .adoption h2 {
+    font-size: 3rem;
+  }
+
+  .navbar {
+    background-color: transparent;
+    color: #ffffff;
+
+    transition: background-color 0.5s, color 0.5s;
+  }
+
+  .navbar_active {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .menu {
+    position: static;
+    flex-direction: row;
+    font-size: 1rem;
+    width: auto;
+  }
+
+  .navbar .bx-menu {
+    display: none;
+  }
+}
